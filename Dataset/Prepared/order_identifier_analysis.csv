@@ -1,0 +1,10 @@
+Metric,Value,Interpretation
+Row-level Order_ID values,17049,One row = one transaction (product line). This is the order/transaction unit.
+Distinct Order_ID prefixes,5000,"Customer order-group key, NOT a purchase order."
+Distinct Customer_ID values,5000,Prefix is 1:1 with customer; it is effectively a customer alias.
+Prefixes spanning more than one date,4103,Disproves the single-purchase parent-order interpretation.
+Prefixes spanning more than one payment method,3635,"Payment method is transaction-level, not parent-order-level."
+Prefixes spanning more than one product category,3942,"Rows are separate transactions, not lines of one basket."
+Prefixes with contiguous suffix 1..n,5000,Suffix is the customer's chronological transaction index.
+Recommended unit for order counts,Row-level Order_ID,"Use COUNT(DISTINCT Order_ID) = 17,049; never count prefixes as orders."
+Recommended use of prefix,Customer_Order_Group_ID,Analytical grouping / customer-level segmentation only.

@@ -1,0 +1,14 @@
+HadoopMapReduce/target/
+HadoopMapReduce/.classpath
+HadoopMapReduce/.project
+HadoopMapReduce/.settings/
+HadoopMapReduce/input.txt
+HadoopMapReduce/pom.xml.backup
+HadoopMapReduce/pom_backup.xml
+HadoopMapReduce/src/main/java/com/lokesh/
+**/backups/
+**/__pycache__/
+*.pyc
+*.log
+derby.log
+README.txt

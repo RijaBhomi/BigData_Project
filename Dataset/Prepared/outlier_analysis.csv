@@ -1,0 +1,9 @@
+Column,Q1,Q3,IQR,Lower_Bound,Upper_Bound,Min,Max,Outlier_Count,Outlier_Pct,Assessment
+Unit_Price,73.26,494.57,421.31,-558.71,1126.54,5.05,7900.01,1757,10.306,"Statistically unusual but valid: positive, finite, heavy-tailed prices; all financial rules pass."
+Quantity,2.0,4.0,2.0,-1.0,7.0,1.0,5.0,0,0.0,No outliers: values are integer 1-5.
+Discount_Amount,0.0,32.71,32.71,-49.06,81.78,0.0,6538.29,2789,16.359,Statistically unusual but valid: many zero discounts; discount never exceeds gross (Section 3.D/3.E).
+Total_Amount,172.97,1267.75,1094.78,-1469.2,2909.92,6.21,37852.05,1943,11.397,Statistically unusual but valid: follows from price x quantity - discount; no mismatches (Section 3.E).
+Session_Duration_Minutes,13.0,17.0,4.0,7.0,23.0,4.0,26.0,85,0.499,Requires investigation: short/long sessions are plausible; no external limit supplied.
+Delivery_Time_Days,4.0,8.0,4.0,-2.0,14.0,1.0,25.0,475,2.786,Requires investigation: no delivery-date field is available to verify these values.
+Pages_Viewed,7.0,11.0,4.0,1.0,17.0,1.0,18.0,1,0.006,Requires investigation: a single high value; no rule to declare it invalid.
+Age,26.0,42.0,16.0,2.0,66.0,18.0,75.0,50,0.293,Statistically unusual but valid: all ages are plausible adults (18-75).

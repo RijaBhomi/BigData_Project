@@ -1,0 +1,16 @@
+Dimension,Check,Observed_Value,Assessment
+Completeness,Missing cells,0,PASS
+Completeness,Empty/whitespace-only cells,0,PASS
+Uniqueness,Fully duplicated rows,0,PASS
+Uniqueness,Duplicate row-level Order_ID,0,PASS
+Consistency,Category label variants,0,PASS
+Consistency,Conflicting customer within prefix,0,PASS
+Consistency,Conflicting city within prefix,0,PASS
+Consistency,Mixed returning flag with reversal,0,PASS — legitimate temporal field
+Validity,Business-rule failures,0,PASS
+Validity,Assumption-rule failures,0,PASS — no violations observed
+Financial,Amount mismatches (tolerance 0.01),0,PASS
+Outliers,Records outside IQR bounds (all columns),7100,Retained and flagged — not deleted
+Identifier,Prefixes spanning multiple dates,4103,"Customer group, not parent order"
+Post-cleaning,Missing cells,0,PASS
+Post-cleaning,Financial mismatches,0,PASS

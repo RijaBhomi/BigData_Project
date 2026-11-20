@@ -1,0 +1,7 @@
+Operation,Columns,Issue,Action,Records_Affected,Records_Removed,Records_Modified
+1. Strip surrounding whitespace,"Order_ID, Customer_ID, Gender, City, Product_Category, Payment_Method, Device_Type, Is_Returning_Customer",Defensive check for fragmented labels,str.strip() applied,0,0,0
+2. Explicit type conversion,"Age, Unit_Price, Quantity, Discount_Amount, Total_Amount, Session_Duration_Minutes, Pages_Viewed, Delivery_Time_Days, Customer_Rating, Date, Is_Returning_Customer",Untyped text in source CSV,numeric / datetime / boolean conversion,17049,0,17049
+3. Extract identifier parts,Order_ID,"Prefix is a customer group, not a purchase order",Added Customer_Order_Group_ID and Order_Line_Number; original ID kept,17049,0,0
+4. Flag statistical outliers,"Is_Unit_Price_Outlier, Is_Discount_Outlier, Is_Total_Amount_Outlier, Is_Delivery_Time_Outlier",Heavy-tailed but valid values,Boolean flags added; no rows deleted,6964,0,0
+5. Add gross and net sales,"Gross_Amount, Net_Amount",Discounts must be reflected consistently in sales,Derived fields added; Net_Amount re-validated against Total_Amount,17049,0,0
+6. Add calendar fields,"Year, Month, Year_Month",Text date cannot be grouped by month reliably,Calendar parts derived from parsed Date,17049,0,0
